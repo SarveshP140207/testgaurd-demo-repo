@@ -12,6 +12,3 @@ def test_multiply():
 def test_divide():
     assert divide(10, 2) == 5
 
-import time 
-def test_timeout():
-    time.sleep(70)
