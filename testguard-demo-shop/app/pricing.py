@@ -4,8 +4,12 @@ def calculate_subtotal(price, quantity):
     return multiply(price, quantity)
 
 def calculate_discount(subtotal, discount_percent):
-    return subtotal * (discount_percent / 100)
 
+    if discount_percent < 0 or discount_percent > 100:
+        raise ValueError("Discount percentage must be between 0 and 100")
+
+    return subtotal * (discount_percent / 100)
+    
 def calculate_final_price(price, quantity, discount_percent=0):
     subtotal = calculate_subtotal(price, quantity)
     discount = calculate_discount(subtotal, discount_percent)
